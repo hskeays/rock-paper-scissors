@@ -1,24 +1,28 @@
 function getComputerChoice() {
-    const choice = ["Rock", "Paper", "Scissors"];
+    const choice = ["rock", "paper", "scissors"];
     const randomChoice = choice[Math.floor(Math.random() * choice.length)];
     return randomChoice;
 }
 
 function play(compChoice, playerChoice) {
 
-    if (playerChoice === "Rock" && getComputerChoice() === "Scissors") {
+    if (playerChoice.toLowerCase() === "rock" && getComputerChoice() === "scissors") {
         return "You Win! Rock beats scissors";
-    } else if (playerChoice === "Rock" && getComputerChoice() === "Paper") {
+    } else if (playerChoice.toLowerCase() === "rock" && getComputerChoice() === "paper") {
         return "You Lose! Paper beats rock";
-    } else if (playerChoice === "Paper" && getComputerChoice() === "Rock") {
+    } else if (playerChoice.toLowerCase() === "paper" && getComputerChoice() === "rock") {
         return "You Win! Paper beats rock";
-    } else if (playerChoice === "Paper" && getComputerChoice() === "Scissors") {
+    } else if (playerChoice.toLowerCase() === "paper" && getComputerChoice() === "scissors") {
         return "You Lose! Scissors beats paper";
-    } else if (playerChoice === "Scissors" && getComputerChoice() === "Paper") {
+    } else if (playerChoice.toLowerCase() === "scissors" && getComputerChoice() === "paper") {
         return "You Win! Scissors beats paper";
-    } else if (playerChoice === "Scissors" && getComputerChoice() === "Rock") {
+    } else if (playerChoice.toLowerCase() === "scissors" && getComputerChoice() === "rock") {
         return "You Lose! Rock beats Scissors";
     } else {
         return "Same choice! Try Again!";
     }
+}
+
+function game() {
+
 }
