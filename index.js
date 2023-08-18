@@ -1,13 +1,13 @@
 // Creates array with valid choices
 const options = ["rock", "paper", "scissors"];
 
-// Creates function to create a random choice for computer
+// Creates function to get random choice for computer
 function getComputerChoice() {
     const randomChoice = options[Math.floor(Math.random() * options.length)];
     return randomChoice;
 }
 
-// Creates function to get player choice, asks with prompt
+// Creates function to get player choice, asks with prompt window
 // Creates loop that repeats prompt if user input != array choice
 function getPlayerChoice() {
     let correctInput = false;
@@ -34,12 +34,12 @@ function getPlayerChoice() {
 // Returns the winner name, or tie
 function checkWinner(compChoice, playerChoice) {
     if (playerChoice == compChoice) {
-        return "Tie"
+        return "Tie";
     }
     else if (
-        (playerChoice == "rock" && compChoice === "scissors") ||
-        (playerChoice == "paper" && compChoice === "rock") ||
-        (playerChoice == "scissors" && compChoice === "paper")
+        (playerChoice == "rock" && compChoice == "scissors") ||
+        (playerChoice == "paper" && compChoice == "rock") ||
+        (playerChoice == "scissors" && compChoice == "paper")
     ) {
         return "Player";
     }
@@ -54,29 +54,50 @@ function checkWinner(compChoice, playerChoice) {
 function playRound(compChoice, playerChoice) {
     const result = checkWinner(compChoice, playerChoice);
     if (result == "Tie") {
-        return "It's a tie!"
+        return "It's a tie!";
     }
     else if (result == "Player") {
-        return `You Win! ${playerChoice} beats ${compChoice}!`
+        return `You Win! ${playerChoice} beats ${compChoice}!`;
     }
     else {
-        return `You Lose! ${compChoice} beats ${playerChoice}!`
+        return `You Lose! ${compChoice} beats ${playerChoice}!`;
     }
 }
 
 // Creates function to play 5 rounds
 function game() {
-    console.log("Are you ready? Let's play!")
-
+    // Creates scores for both players, starting at 0
+    let playerScore = 0;
+    let compScore = 0;
+    console.log("Are you ready? Let's play!");
     // Creates loop to replay round 5 times
     // Logs results from playRound() function
     for (let i = 0; i < 5; i++) {
-        const playerChoice = getPlayerChoice();
         const compChoice = getComputerChoice();
+        const playerChoice = getPlayerChoice();
         console.log(playRound(compChoice, playerChoice));
+        // Increments player score if player wins
+        // Increments computer score if computer wins
+        if (checkWinner(compChoice, playerChoice) == "Player") {
+            playerScore++;
+        }
+        else if (checkWinner(compChoice, playerChoice) == "Computer") {
+            compScore++;
+        }
     }
-
-    console.log("Game Over!");
+    // Logs score of both players
+    console.log(`Player score: ${playerScore} | Computer score: ${compScore}`);
+    // Compares player and computer score and determines winner
+    if (playerScore > compScore) {
+        console.log("YOU WIN!");
+    }
+    else if (playerScore < compScore) {
+        console.log("YOU LOSE!");
+    }
+    else {
+        console.log("THE GAME ENDS IN A TIE!");
+    }
+    console.log("Game over! Thanks for playing!");
 }
 
-// game()
+game();
