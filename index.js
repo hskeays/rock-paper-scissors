@@ -3,8 +3,8 @@ btns.forEach(btn => btn.addEventListener('click', game));
 const roundResult = document.querySelector("#roundResult");
 const scoreBoard = document.querySelector("#scoreBoard");
 const gameResult = document.querySelector("#gameResult");
-const reset = document.querySelector("#reset");
-reset.addEventListener("click", () => window.location.reload());
+const resetGame = document.querySelector("#reset");
+resetGame.addEventListener("click", () => window.location.reload());
 let playerScore = 0;
 let compScore = 0;
 
@@ -52,10 +52,10 @@ function game(event) {
     if (playerScore >= 5) {
         gameResult.textContent = "YOU WIN THE GAME!";
         btns.forEach(btn => btn.removeEventListener("click", game));
-        reset.removeAttribute("style");
+        resetGame.removeAttribute("style");
     } else if (compScore >= 5) {
         gameResult.textContent = "YOU LOSE THE GAME!";
         btns.forEach(btn => btn.removeEventListener("click", game));
-        reset.removeAttribute("style");
+        resetGame.removeAttribute("style");
     }
 }
