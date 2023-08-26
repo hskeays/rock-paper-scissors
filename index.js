@@ -43,12 +43,12 @@ function game(event) {
     const compChoice = getComputerChoice();
     const playerChoice = event.target.id;
     roundResult.textContent = playRound(compChoice, playerChoice);
+    scoreBoard.textContent = `Player score: ${playerScore} | Computer score: ${compScore}`;
     if (checkWinner(compChoice, playerChoice) == "Player") {
         playerScore++;
     } else if (checkWinner(compChoice, playerChoice) == "Computer") {
         compScore++;
     }
-    scoreBoard.textContent = `Player score: ${playerScore} | Computer score: ${compScore}`;
     if (playerScore >= 5) {
         gameResult.textContent = "YOU WIN THE GAME!";
         btns.forEach(btn => btn.removeEventListener("click", game));
