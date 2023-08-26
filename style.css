@@ -1,3 +1,16 @@
-* {
+body {
+    background-image: url(/images/rpsbackground.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
     text-align: center;
+    line-height: 2em;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-image:url(/images/textured_paper.png);
+    padding: 50px;
+    min-height: 300px;
 }
