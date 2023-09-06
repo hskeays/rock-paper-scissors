@@ -50,11 +50,11 @@ function game(event) {
     }
     scoreBoard.textContent = `Player score: ${playerScore} | Computer score: ${compScore}`;
     if (playerScore >= 5) {
-        gameResult.textContent = "YOU WIN THE GAME!";
+        gameResult.textContent = "You win the game!";
         btns.forEach(btn => btn.removeEventListener("click", game));
         resetGame.removeAttribute("style");
     } else if (compScore >= 5) {
-        gameResult.textContent = "YOU LOSE THE GAME!";
+        gameResult.textContent = "You lose the game!";
         btns.forEach(btn => btn.removeEventListener("click", game));
         resetGame.removeAttribute("style");
     }
