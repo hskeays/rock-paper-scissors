@@ -13,19 +13,60 @@ body {
 .header {
    text-align: center;
 }
+
 .card {
     text-align: center;
     line-height: 2em;
+    margin-top: auto;
 }
 
 .results {
     height: 150px;
     text-align: center;
     font-size: 20px;
-    margin-top: 30px;
     line-height: 2em;
+    margin-bottom: auto;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+#github {
+    height: 30px;
+    width: auto;
+    margin: 0;
+}
+
+#github:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {transform: translate(1px, 1px) rotate(0deg);}
+    10% {transform: translate(-1px, -1px) rotate(-1deg);}
+    20% {transform: translate(-1px, 0px) rotate(1deg);}
+    30% {transform: translate(1px, 1px) rotate(0deg);}
+    40% {transform: translate(1px, -1px) rotate(1deg);}
+    50% {transform: translate(-1px, 1px) rotate(-1deg);}
+    60% {transform: translate(-1px, 1px) rotate(0deg);}
+    70% {transform: translate(1px, 1px) rotate(-1deg);}
+    80% {transform: translate(-1px, -1px) rotate(1deg);}
+    90% {transform: translate(1px, 1px) rotate(0deg);}
+    100% {transform: translate(1px, -1px) rotate(-1deg);}
+}
+
 h1 {
+    margin-top: 150px;
     font-size: 50px;
 }
 
@@ -48,10 +89,6 @@ img:hover {
 img:active {
     scale: 1.2;
     transition: .5s;
-}
-
-p {
-    font-size: 25px
 }
 
 button {
