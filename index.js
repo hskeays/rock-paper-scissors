@@ -33,9 +33,9 @@ function playRound(compChoice, playerChoice) {
     if (result == "Tie") {
         return "It's a tie!";
     } else if (result == "Player") {
-        return `You Win! ${playerChoice} beats ${compChoice}!`;
+        return `You Win! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${compChoice = compChoice.charAt(0).toUpperCase() + compChoice.slice(1)}!`;
     } else {
-        return `You Lose! ${compChoice} beats ${playerChoice}!`;
+        return `You Lose! ${compChoice = compChoice.charAt(0).toUpperCase() + compChoice.slice(1)} beats ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`;
     }
 }
 
