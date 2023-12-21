@@ -31,7 +31,7 @@ function checkWinner(compChoice, playerChoice) {
 function playRound(compChoice, playerChoice) {
     const result = checkWinner(compChoice, playerChoice);
     if (result == "Tie") {
-        return "It's a tie!";
+        return "It's a tie!"
     } else if (result == "Player") {
         return `You Win! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${compChoice = compChoice.charAt(0).toUpperCase() + compChoice.slice(1)}!`;
     } else {
